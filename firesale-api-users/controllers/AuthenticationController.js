@@ -114,8 +114,8 @@ var nodemailer = require('nodemailer');
         var transporter = nodemailer.createTransport({
         		service: 'Gmail',
         		auth: {
-        				user: 'seostardibs@gmail.com',
-        				pass: 'dibs0102'
+        				user: 'firesale20161@gmail.com',
+        				pass: 'firesaleuser123'
         		}
         });
         console.log("new object ID-> " + objectId);
@@ -151,25 +151,26 @@ var nodemailer = require('nodemailer');
           if(list == ""){
             console.log("email not existing");
           }else{
-            console.log("TO OBJECT ID -> " + list.objectId);
+            console.log("TO OBJECT ID -> " + objectId);
             var transporter = nodemailer.createTransport({
                 service: 'Gmail',
                 auth: {
-                    user: 'seostardibs@gmail.com',
-                    pass: 'dibs0102'
+                    user: 'firesale20161@gmail.com',
+                    pass: 'firesaleuser123'
                 }
             });
-            //var emailTemplate = '<div align="center"><img src="logo.png"/><h3 style="color: #315C7E;">Click Reset button to reset your password</h3><a href = "http://54.169.83.117:2000/ipostmo-auth/update-password/'+ objectId +'" style="width: 130px; height: 50px; background-color:#315C7E; color: white; border-radius: 10px; font-size: 20px;"> Reset </a></div>'
-            var emailTemplate = '<div align="center"><img src = "/images/logo.png"/><h3 style="color: #315C7E;">Click Reset button to reset your password</h3><a href = "https://ipostmo-v3-auth.crosr.com/ipostmo-auth/update-password/'+ objectId +'" style = "text-decoration:none; margin: 0; background: #315C7E; color: #fff; padding: 9px; font-size: 18px; line-height: 18px; border: 0;"> Reset</a></div>';
-            //<div style="text-decoration: underline;"><a href = "http://54.169.83.117:2000/ipostmo-auth/update-password/'+ objectId +'">click to reset your password 1</a></div>';
+            var emailTemplate = '<div align="center"><img src = "/images/logo.png"/><h3 style="color: #ebc134;">Click Reset button to reset your password</h3><a href = "http://localhost:2100/firesale-auth/update-password/'+ objectId +'" style = "text-decoration:none; margin: 0; background: #ed2127; color: #fff; padding: 9px; font-size: 18px; line-height: 18px; border: 0;"> Reset</a></div>';
             var mailOptions = {
-              from: '"Ipostmo.com" <ipostmo@gmail.com>', // sender address
+              from: '"FireSale" <ipostmo@gmail.com>', // sender address
               to: 'email,' + email, // list of receivers
-              subject: 'Welcome to Ipostmo.com!', // Subject line
-              text: 'Ipostmo.com Verification', // plaintext body
+              subject: 'Welcome to FireSale!', // Subject line
+              text: 'FireSale Verification', // plaintext body
               html: emailTemplate // html body
             };
             transporter.sendMail(mailOptions, function(error, info){
+              if(error){
+                return console.log(error);
+              }
               console.log('Message sent for forgot password: ' + info.response);
             });
           }
