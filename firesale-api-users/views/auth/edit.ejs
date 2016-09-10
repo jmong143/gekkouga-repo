@@ -1,0 +1,45 @@
+<html>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<div class = "container">
+	<div class = "row">
+		<form class = "" action = "/firesale-auth/update-profile" method = "post">
+			<div style = "padding-top: 50px;"></div>
+			<h3>Update</h3>
+				<p>
+					<input type='text' name='currentObjectId' class='form-control' placeholder='Username' value = '<%= user.objectId %>'>
+				</p>
+				<p>
+					<input type='text' name='username' class='form-control' placeholder='Username' value = '<%= user.username %>' disabled>
+				</p>
+
+				<p>
+					<input type='password' name='password' class='form-control nomargin' placeholder='Password'>
+				</p>
+
+				<p>
+					<textarea name = "address" class='form-control nomargin' placeholder='Address' required  autofocus><%= user.address %></textarea>
+				</p>
+
+				<p>
+					<input type = "text" name = "birthdate" class='form-control nomargin' placeholder='Birthdate' value = '<%= user.birthdate.iso %>' required>
+				</p>
+
+				<p>
+					<input type = "text" name = "contact" class='form-control nomargin' placeholder='Contact Number' value = '<%= user.contact %>' required>
+				</p>
+
+				<p>
+					<input type='email' name='email' class='form-control' placeholder='Email' value = '<%= user.email %>' required>
+				</p>
+
+				<p>
+				<input type='text' name='fullname' class='form-control' placeholder='Full Name' value = '<%= user.fullname %>' required>
+				</p>
+
+				<p>
+					<button type = "submit" class = "btn btn-primary"> Register</button>
+				</p>
+			</form>
+		</div>
+	</div>
+<html>
